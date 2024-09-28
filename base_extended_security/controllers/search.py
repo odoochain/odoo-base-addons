@@ -1,4 +1,4 @@
-# © 2019 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo.addons.web.controllers.main import DataSet
@@ -110,8 +110,7 @@ def _get_args_and_kwargs_with_new_domain(method, args, kwargs, domain):
 
     if len(args) > argument_index:
         args = (
-            args[:argument_index] + [domain] +
-            args[argument_index + 1:]
+            args[:argument_index] + [domain] + args[argument_index + 1:]
         )
 
     else:

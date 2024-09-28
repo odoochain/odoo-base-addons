@@ -1,4 +1,4 @@
-# © 2019 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2022 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 import logging
@@ -27,8 +27,9 @@ class QueueJob(models.Model):
         min_time = datetime.now() - timedelta(seconds=int(time_limit))
 
         stalled_jobs = (
-            started_jobs.filtered(lambda j: j.date_started < min_time) |
-            enqueued_jobs.filtered(lambda j: j.date_enqueued < min_time)
+            started_jobs.filtered(
+                lambda j: j.date_started < min_time) | enqueued_jobs.filtered(
+                    lambda j: j.date_enqueued < min_time)
         )
 
         for job in stalled_jobs:

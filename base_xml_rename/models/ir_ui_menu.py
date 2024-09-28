@@ -1,4 +1,4 @@
-# © 2019 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import api, models
@@ -16,8 +16,7 @@ class IrUiMenu(models.Model):
 
         menu = self.env.ref(ref)
         should_update_action_name = (
-            is_lang_installed(self.env, lang) and
-            menu.action and field == 'name'
+            is_lang_installed(self.env, lang) and menu.action and field == 'name'
         )
         if should_update_action_name:
             menu.action.with_context(lang=lang).name = value

@@ -1,4 +1,4 @@
-# © 2019 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import fields
@@ -171,25 +171,21 @@ class _ExtendedSecurityVerifier:
 def _check_read_rules(model, record_ids):
     records = _browse_records(model, record_ids)
     records.check_extended_security_read()
-    records.check_extended_security_all()
 
 
 def _check_write_rules(model, record_ids):
     records = _browse_records(model, record_ids)
     records.check_extended_security_write()
-    records.check_extended_security_all()
 
 
 def _check_create_rules(model, record_ids):
     records = _browse_records(model, record_ids)
     records.check_extended_security_create()
-    records.check_extended_security_all()
 
 
 def _check_unlink_rules(model, record_ids):
     records = _browse_records(model, record_ids)
     records.check_extended_security_unlink()
-    records.check_extended_security_all()
 
 
 def _browse_records(model, record_ids):

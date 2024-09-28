@@ -1,4 +1,4 @@
-# © 2019 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2022 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import _
@@ -22,7 +22,6 @@ def _get_related_model(model: str, relation: str):
 
 
 def _raise_private_field_access_error(model: str, field: str):
-    context = request.env.context  # pylint: disable=unused-variable
     raise AccessError(
         _('You do not have access to the field {field} of model {model}')
         .format(field=field, model=model)
